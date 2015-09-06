@@ -1,0 +1,12 @@
+/** Arquivos de Desenvolvimento **/
+.git
+Gruntfile.js
+node_modules/
+package.json
+
+/** Arquivos Locais **/
+wp-config-local.php
+
+/** Arquivos de Conteúdo **/
+wp-content/upgrade/*
+wp-content/uploads/*
