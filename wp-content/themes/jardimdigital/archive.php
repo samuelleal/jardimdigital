@@ -55,22 +55,12 @@ get_header(); ?>
                     <div class="timeline-item object-non-visible <?php echo ($postsbymonth->current_post%2 == 0?'':'pull-right'); ?>" data-animation-effect="fadeInUpSmall" data-effect-delay="200">
                       <!-- blogpost start -->
                       <article class="clearfix blogpost">
-                        <div class="overlay-container">
-                          <?php
-                            if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
-                              the_post_thumbnail(large);
-                            }
-                          ?>
-                          <div class="overlay">
-                            <div class="overlay-links">
-                              <a href="<?php the_permalink(); ?>"><i class="fa fa-link"></i></a>
-                              <?php
-                                $feat_image_url = wp_get_attachment_url( get_post_thumbnail_id() );
-                                echo '<a href="'.$feat_image_url.'" class="popup-img-single" title="teste"><i class="fa fa-search-plus"></i></a>';
-                              ?>
-                            </div>
-                          </div>
-                        </div>
+
+                      <?php
+                        $format = get_post_format();
+                        get_template_part( 'format', $format );
+                      ?>
+
                         <div class="blogpost-body">
                           <div class="post-info">
                             <span class="day"><?php the_time('d') ?></span>

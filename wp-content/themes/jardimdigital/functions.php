@@ -81,9 +81,16 @@ function jardimdigital_enqueue_script() {
 add_action( 'wp_enqueue_scripts', 'jardimdigital_enqueue_style' );  
 add_action( 'wp_enqueue_scripts', 'jardimdigital_enqueue_script' );
 
+add_action( 'after_setup_theme', 'jardimdigital_setup' );
 
+function jardimdigital_setup() {
 
-add_theme_support( 'post-thumbnails' );
+  add_theme_support( 'post-formats', array( 'gallery', 'link', 'quote', 'video', 'audio' ) );
+
+  add_theme_support( 'post-thumbnails' );
+
+}
+
 ?>
 
 
