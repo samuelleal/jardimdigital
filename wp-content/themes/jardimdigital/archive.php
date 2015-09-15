@@ -69,7 +69,7 @@ get_header(); ?>
                           <div class="blogpost-content">
                             <header>
                               <h2 class="title"><a href="blog-post.html"><?php the_title(); ?></a></h2>
-                              <div class="submitted"><i class="fa fa-user pr-5"></i> by <a href="#"><?php the_author(); ?></a></div>
+                              <div class="submitted"><i class="fa fa-user pr-5"></i> por <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>"><?php the_author(); ?></a></div>
                             </header>
                             <p><?php the_excerpt(); ?></p>
                           </div>
