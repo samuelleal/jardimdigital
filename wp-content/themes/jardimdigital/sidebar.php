@@ -1,5 +1,18 @@
+<!-- sidebar start -->
+<aside class="col-md-3 col-md-offset-1">
+	<div class="sidebar">
+	<?php 
+		if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('right_sidebar') ) : 
+		endif;
+	?>
+	</div>
+</aside>
+<!-- sidebar end -->
+
+
+
 						<!-- sidebar start -->
-						<aside class="col-md-3 col-md-offset-1">
+						<!-- <aside class="col-md-3 col-md-offset-1">
 							<div class="sidebar">
 								<div class="block clearfix">
 									<h3 class="title">Sidebar menu</h3>
@@ -164,5 +177,5 @@
 									</form>
 								</div>
 							</div>
-						</aside>
+						</aside> -->
 						<!-- sidebar end -->

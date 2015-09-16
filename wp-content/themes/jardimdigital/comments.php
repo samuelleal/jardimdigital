@@ -40,13 +40,11 @@ $jd_args = array(
       wp_logout_url( apply_filters( 'the_permalink', get_permalink( ) ) )
     ) . '</p>',
 
-  'comment_notes_before' => '<p class="comment-notes">' .
-    __( 'Seu endereço de email não será publicado.' ) . ( $req ? $required_text : '' ) .
-    '</p>',
+  'comment_notes_before' => '',
 
   'comment_notes_after' => '<p class="form-allowed-tags">' .
     sprintf(
-      __( 'Você pode usar essas <abbr title="HyperText Markup Language">HTML</abbr> tags: %s' ),
+      __( 'Você pode usar essas tags <abbr title="HyperText Markup Language">HTML</abbr>: %s' ),
       ' <code>' . allowed_tags() . '</code>'
     ) . '</p>',
 
