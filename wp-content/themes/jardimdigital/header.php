@@ -38,8 +38,9 @@
 		<!-- page wrapper start -->
 		<!-- ================ -->
 		<div class="page-wrapper">
-
+		
 			<!-- header-top start (Add "dark" class to .header-top in order to enable dark header-top e.g <div class="header-top dark">) -->
+
 			<!-- ================ -->
 			<div class="header-top">
 				<div class="container">
@@ -87,19 +88,7 @@
 								<!-- header top dropdowns start -->
 								<!-- ================ -->
 								<div class="header-top-dropdown">
-									<div class="btn-group dropdown">
-										<button type="button" class="btn dropdown-toggle" data-toggle="dropdown"><i class="fa fa-search"></i> Search</button>
-										<ul class="dropdown-menu dropdown-menu-right dropdown-animation">
-											<li>
-												<form role="search" class="search-box">
-													<div class="form-group has-feedback">
-														<input type="text" class="form-control" placeholder="Search">
-														<i class="fa fa-search form-control-feedback"></i>
-													</div>
-												</form>
-											</li>
-										</ul>
-									</div>
+									<?php get_search_form(); ?>
 									<div class="btn-group dropdown">
 										<button type="button" class="btn dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Login</button>
 										<ul class="dropdown-menu dropdown-menu-right dropdown-animation">
@@ -194,10 +183,36 @@
 											</div>
 
 											<!-- Collect the nav links, forms, and other content for toggling -->
-											<div class="collapse navbar-collapse" id="navbar-collapse-1">
+
+<?php
+
+$defaults = array(
+	'theme_location'  => 'header-menu',
+	// 'menu'            => '',
+	'container'       => 'div',
+	'container_class' => 'collapse navbar-collapse',
+	'container_id'    => 'navbar-collapse-1',
+	// 'menu_class'      => 'menu',
+	// 'menu_id'         => '',
+	// 'echo'            => true,
+	// 'fallback_cb'     => 'wp_page_menu',
+	// 'before'          => '',
+	// 'after'           => '',
+	// 'link_before'     => '',
+	// 'link_after'      => '',
+	'items_wrap'      => '<ul id="%1$s" class="%2$s nav navbar-nav navbar-right">%3$s</ul>',
+	// 'depth'           => 0,
+	'walker'          => new JD_walker_nav_menu()
+);
+
+wp_nav_menu( $defaults );
+
+?>
+
+											<!-- <div class="collapse navbar-collapse" id="navbar-collapse-1">
 												<ul class="nav navbar-nav navbar-right">
 													<li><a href="#about">Quem Somos</a></li>
-													<!-- mega-menu start -->
+													mega-menu start
 													<li class="dropdown mega-menu">
 														<a href="#" class="dropdown-toggle" data-toggle="dropdown">Soluções</a>
 														<ul class="dropdown-menu">
@@ -230,12 +245,12 @@
 															</li>
 														</ul>
 													</li>
-													<!-- mega-menu end -->
+													mega-menu end
 													<li><a href="#about">Cases</a></li>
 													<li><a href="#about">Blog</a></li>
 													<li><a href="#about">Contato</a></li>
 												</ul>
-											</div>
+											</div> -->
 
 										</div>
 									</nav>
